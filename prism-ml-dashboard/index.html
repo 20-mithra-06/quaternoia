@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Prism · ML Prediction Dashboard</title>
+  </head>
+  <body>
+    <header class="top">
+      <h1>◈ Prism</h1>
+      <div>
+        <span class="mut">Customer churn predictor</span
+        ><button class="ghost" id="keyBtn">🔑 API key</button>
+      </div>
+    </header>
+    <main class="grid">
+      <section class="glass card">
+        <h3>Customer profile</h3>
+        <label
+          >Tenure <b id="v0">24</b> months<input
+            type="range"
+            id="s0"
+            min="1"
+            max="72"
+            value="24"
+        /></label>
+        <label
+          >Monthly spend $<b id="v1">80</b
+          ><input type="range" id="s1" min="10" max="300" value="80"
+        /></label>
+        <label
+          >Support tickets (90 days) <b id="v2">4</b
+          ><input type="range" id="s2" min="0" max="15" value="4"
+        /></label>
+        <label
+          >Logins per week <b id="v3">5</b
+          ><input type="range" id="s3" min="0" max="30" value="5"
+        /></label>
+        <button id="go">Run prediction</button>
+        <p class="mut" id="msg">
+          Gemini acts as the model and explains its reasoning.
+        </p>
+      </section>
+      <section class="glass card gauge">
+        <h3>Churn probability</h3>
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="50" class="trk" />
+          <circle cx="60" cy="60" r="50" id="ring" />
+          <text x="60" y="68" id="pct">--</text>
+        </svg>
+        <div class="pill" id="risk">Awaiting run</div>
+        <p class="mut">Confidence <b id="conf">--</b></p>
+      </section>
+      <section class="glass card">
+        <h3>Feature importance</h3>
+        <div id="fac" class="mut">
+          Run a prediction to see what drives risk.
+        </div>
+      </section>
+      <section class="glass card wide">
+        <h3>6-month risk forecast</h3>
+        <svg viewBox="0 0 600 190" id="fc"></svg>
+      </section>
+      <section class="glass card wide">
+        <h3>Explanation and action</h3>
+        <p id="exp" class="mut">...</p>
+        <p id="act"></p>
+      </section>
+    </main>
+    <dialog id="keyDlg">
+      <h3>Free Google Gemini key</h3>
+      <p>
+        Create a free key at
+        <a
+          href="https://aistudio.google.com/apikey"
+          target="_blank"
+          rel="noopener"
+          >aistudio.google.com/apikey</a
+        >. It is saved only in this browser.
+      </p>
+      <input
+        id="keyIn"
+        type="password"
+        placeholder="Paste API key (AIza...)"
+      /><input
+        id="modelIn"
+        placeholder="Model, default gemini-2.5-flash"
+      /><button id="keySave">Save</button>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
+
