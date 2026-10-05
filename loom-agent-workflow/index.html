@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><title>Loom · AI Agent Workflow</title></head><body>
+<header class="top"><h1>❖ Loom</h1><div><button class="ghost" id="keyBtn">🔑 API key</button></div></header>
+<main class="wrap">
+ <section class="glass goal"><h3>Give your agent team a goal</h3>
+  <div class="row"><input id="goal" placeholder="e.g. Launch plan for a student coding club" value="Create a launch plan for a student AI club"><button id="plan">Plan</button><button id="run" disabled>▶ Run</button></div></section>
+ <section class="cols"><div id="flow" class="flow"><p class="mut">Plan a goal to see agents appear.</p></div>
+  <aside class="glass logp"><h3>Activity log</h3><div id="log"></div></aside></section>
+</main>
+<dialog id="keyDlg"><h3>Free Google Gemini key</h3><p>Create a free key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>. It is saved only in this browser.</p><input id="keyIn" type="password" placeholder="Paste API key (AIza...)"><input id="modelIn" placeholder="Model, default gemini-2.5-flash"><button id="keySave">Save</button></dialog>
+<script src="script.js"></script></body></html>
